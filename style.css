@@ -7,8 +7,14 @@
 
 /* —— body + fonts —— */
 body {
-  font-family: "Montserrat", Arial, Helvetica, sans-serif;
-  color: #333;
+  /* Primary requested font with sensible fallbacks */
+  font-family: "Helvetica Neue LT 55 Roman", "Helvetica Neue", Helvetica, Arial,
+    sans-serif;
+  color: #fff;
+  background-color: #000; /* fallback */
+  background-image: linear-gradient(180deg, #ffffff 0%, #e3a535 100%);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   display: flex;
   justify-content: center;
 }
@@ -25,9 +31,34 @@ body {
 }
 
 .site-title {
-  font-size: 22px;
+  font-size: 28px;
   font-weight: 500;
   margin-bottom: 10px;
+  color: #e3a535; /* updated to requested hex */
+}
+
+/* header brand: logo + title */
+.header-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  justify-content: center;
+}
+
+.site-logo {
+  width: 200px; /* increased size */
+  height: auto;
+  display: block;
+}
+
+@media (max-width: 480px) {
+  .site-logo {
+    width: 64px; /* slightly smaller on small screens */
+  }
+
+  .site-title {
+    font-size: 20px;
+  }
 }
 
 /* chat window */
@@ -37,12 +68,13 @@ body {
 
 .chat-window {
   height: 360px;
-  border: 1px solid #000;
+  border: 1px solid #ff003b; /* brand red */
   padding: 20px;
   font-size: 18px;
   line-height: 1.5;
   overflow-y: auto;
-  background: #fafafa;
+  background: #fff; /* chatbox should be white */
+  color: #000; /* dark text for readability on white */
   white-space: pre-line;
 }
 
@@ -53,11 +85,11 @@ body {
 }
 
 .msg.user {
-  color: #000;
+  color: #fff; /* user messages on dark bg */
 }
 
 .msg.ai {
-  color: #666666;
+  color: #dcdcdc; /* AI messages slightly muted but readable */
 }
 
 /* input row */
@@ -71,6 +103,8 @@ body {
   flex: 1;
   padding: 12px;
   border: 1px solid #ccc;
+  background: #fff; /* keep input readable on dark page */
+  color: #000;
   font-size: 18px;
 }
 
@@ -125,7 +159,7 @@ body {
   margin: 60px 0 40px;
   text-align: center;
   font-size: 14px;
-  color: #666;
+  color: #ff003b; /* footer text in brand red */
 }
 
 .site-footer nav {
@@ -134,10 +168,10 @@ body {
 
 .site-footer a {
   margin: 0 8px;
-  color: #000;
+  color: #ff003b; /* footer links in brand red */
   text-decoration: none;
 }
 
 .site-footer a:hover {
-  color: #666666;
+  color: #ff003b; /* keep hover same (or adjust if you prefer) */
 }
