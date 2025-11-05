@@ -1,3 +1,5 @@
+// Worker URL
+const workerURL = loreal-chatbot.unofffgghh.workers.dev;
 /* DOM elements */
 const chatForm = document.getElementById("chatForm");
 const userInput = document.getElementById("userInput");
