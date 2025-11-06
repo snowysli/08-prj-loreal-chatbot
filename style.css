@@ -85,11 +85,11 @@ body {
 }
 
 .msg.user {
-  color: #fff; /* user messages on dark bg */
+  color: #e3a535; /* user messages on dark bg */
 }
 
 .msg.ai {
-  color: #dcdcdc; /* AI messages slightly muted but readable */
+  color: #000; /* AI messages in black for readability on white chat window */
 }
 
 /* input row */
@@ -115,7 +115,7 @@ body {
 
 .chat-form button {
   font-size: 18px;
-  background: #000;
+  background: #ff003b; /* changed to brand red */
   color: #fff;
   border: none;
   padding: 12px;
@@ -133,12 +133,29 @@ body {
 }
 
 .chat-form button:hover {
-  background: #666666;
+  background: #c6002f; /* slightly darker red on hover */
 }
 
 .chat-form button:focus {
   outline: 2px solid #000;
   outline-offset: 2px;
+}
+
+/* current question preview (above the chat window) */
+.current-question {
+  background: #fff; /* match chat window */
+  color: #000;
+  padding: 10px 12px;
+  border: 1px solid #e6e6e6;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  font-size: 16px;
+  line-height: 1.4;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+.current-question #currentQuestionText {
+  font-weight: 600;
 }
 
 /* visually hidden */
@@ -159,7 +176,7 @@ body {
   margin: 60px 0 40px;
   text-align: center;
   font-size: 14px;
-  color: #ff003b; /* footer text in brand red */
+  color: #000000; /* footer text in brand red */
 }
 
 .site-footer nav {
@@ -168,10 +185,10 @@ body {
 
 .site-footer a {
   margin: 0 8px;
-  color: #ff003b; /* footer links in brand red */
+  color: #000000; /* footer links in brand red */
   text-decoration: none;
 }
 
 .site-footer a:hover {
-  color: #ff003b; /* keep hover same (or adjust if you prefer) */
+  color: #000000; /* keep hover same (or adjust if you prefer) */
 }
